@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="header-container">
+            <div class="top-holder">
+                <h1 class="brand">Uncovered</h1>
+                <!-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="35px" height="35px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path id="shuffle-2-icon" d="M256,50C142.229,50,50,142.229,50,256s92.229,206,206,206s206-92.229,206-206S369.771,50,256,50z
+     M138.792,183.775H158.8c25.578,0,50.385,10.521,68.283,29.737c-0.777,1.148-14.946,23.758-14.946,23.758
+    c-12.524-16.846-32.081-26.754-53.337-26.754h-20.008V183.775z M328.182,350.283l-0.058-22.115h-7.198
+    c-25.549,0-50.369-10.5-68.284-29.737c0.776-1.147,14.946-23.754,14.946-23.754c12.525,16.842,32.082,26.752,53.338,26.752h7.128
+    v-24.197l59.154,36.918L328.182,350.283z M327.992,234.768l0.062-24.197h-7.128c-23.098,0-44.194,11.693-56.436,31.279
+    l-26.58,42.527c-17.274,27.637-47.393,43.847-79.11,43.847h-20.008v-26.739H158.8c23.097,0,44.194-11.693,56.436-31.279
+    l26.58-42.525c17.273-27.638,47.392-43.849,79.11-43.849h7.198l0.058-22.113l59.026,36.133L327.992,234.768z"/>
+</svg> -->
+            </div>
+        </div>
+
+        <div id="holder">
+            <iframe src="" seamless="seamless" frameborder="0"></iframe>
+        </div>
+        <div id="footer">
+            <ul class="categories">
+                <li>Test1</li>
+                <li>Test2</li>
+                <li>Test3</li>
+            </ul>
+
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+        <script type="text/javascript">
+        var sites = ["https://yabbly.com/",
+                     "http://porch.com/",
+                     "http://www.ubi-interactive.com/",
+                     "http://www.insidesoci.al/",
+                     "http://www.elasticbox.com/",
+                     "http://twenty20.com/",
+                     "http://www.simpler.co/",
+                     "https://www.vayable.com/"
+                    ];
+        $(document).ready(function() {
+
+            $("iframe").hide().attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]).fadeIn(700);
+            
+            $(".brand").click(function(){randomSite();});
+        });
+
+        function randomSite() {
+            $("iframe").fadeOut(800, function(){
+                $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))])
+            setTimeout($(this).fadeIn(900), 1500);
+            });
+            
+        }
+
+
+        </script>
+    </body>
+</html>
