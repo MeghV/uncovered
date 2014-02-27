@@ -22,17 +22,7 @@
 
         <div class="header-container">
             <div class="top-holder">
-                <h1 class="brand">Uncovered</h1>
-                <!-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="35px" height="35px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-<path id="shuffle-2-icon" d="M256,50C142.229,50,50,142.229,50,256s92.229,206,206,206s206-92.229,206-206S369.771,50,256,50z
-     M138.792,183.775H158.8c25.578,0,50.385,10.521,68.283,29.737c-0.777,1.148-14.946,23.758-14.946,23.758
-    c-12.524-16.846-32.081-26.754-53.337-26.754h-20.008V183.775z M328.182,350.283l-0.058-22.115h-7.198
-    c-25.549,0-50.369-10.5-68.284-29.737c0.776-1.147,14.946-23.754,14.946-23.754c12.525,16.842,32.082,26.752,53.338,26.752h7.128
-    v-24.197l59.154,36.918L328.182,350.283z M327.992,234.768l0.062-24.197h-7.128c-23.098,0-44.194,11.693-56.436,31.279
-    l-26.58,42.527c-17.274,27.637-47.393,43.847-79.11,43.847h-20.008v-26.739H158.8c23.097,0,44.194-11.693,56.436-31.279
-    l26.58-42.525c17.273-27.638,47.392-43.849,79.11-43.849h7.198l0.058-22.113l59.026,36.133L327.992,234.768z"/>
-</svg> -->
+                <h1 class="brand" >Uncovered</h1>
             </div>
         </div>
 
@@ -40,12 +30,13 @@
             <iframe src="" seamless="seamless" frameborder="0"></iframe>
         </div>
         <div id="footer">
-            <ul class="categories">
+            <!-- <ul class="categories">
                 <li>Test1</li>
                 <li>Test2</li>
                 <li>Test3</li>
             </ul>
-
+ -->
+          <input id="city" name="city" placeholder="City" autocomplete="off">
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -53,11 +44,16 @@
 
         <script src="js/main.js"></script>
 
+
         <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-48368005-1', 'itsmegh.com');
+          ga('send', 'pageview');
+
         </script>
         <script type="text/javascript">
         var sites = ["https://yabbly.com/",
@@ -69,21 +65,29 @@
                      "http://www.simpler.co/",
                      "https://www.vayable.com/"
                     ];
-        $(document).ready(function() {
 
-            $("iframe").hide().attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]).fadeIn(700);
+        var iFrameLoaded = false;
+        $(document).ready(function() {
+            $("iframe").hide(function() {
+              $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
+            }).fadeIn(400);
             
             $(".brand").click(function(){randomSite();});
         });
 
         function randomSite() {
-            $("iframe").fadeOut(800, function(){
-                $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))])
-            setTimeout($(this).fadeIn(900), 1500);
+            _gaq.push(['_trackEvent', 'New Site', '"Uncovered" click']);
+            $("iframe").fadeOut(600, function() {
+              $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
             });
-            
+            $("iframe").load(function() {
+                $(this).fadeIn(500);
+            });   
         }
 
+        function OniFrameLoad() {
+          iFrameLoaded = true;
+        }
 
         </script>
     </body>
