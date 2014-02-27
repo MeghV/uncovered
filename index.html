@@ -23,7 +23,7 @@
 
         <div class="header-container">
             <div class="top-holder">
-                <h1 class="brand" >Uncovered</h1>
+                <h1 class="brand" onClick="_gaq.push(['_trackEvent', 'New Site', '"Uncovered" click']);">Uncovered</h1>
             </div>
         </div>
 
@@ -77,7 +77,6 @@
         });
 
         function randomSite() {
-            _gaq.push(['_trackEvent', 'New Site', '"Uncovered" click']);
             $("iframe").fadeOut(600, function() {
               $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
             });
