@@ -1,6 +1,13 @@
 var cityID;
 
 $(document).ready(function() {
+
+	$("#intro").click(function() {
+		$(this).fadeOut(400, function() {
+			$("iframe").fadeIn(600);
+		});
+		
+	});
 	$("input[name='city']").mouseenter(function() {
 		$(this).focus();
 		$(this).css({
