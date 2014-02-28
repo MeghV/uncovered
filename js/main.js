@@ -75,5 +75,5 @@ function cityInput() {
 function historyAppend() {
 	var parser = document.createElement('a');
 	parser.href = $("iframe").attr("src");
-	History.pushState(null, null, parser.hostname);
+	history.pushState(null, null, parser.hostname);
 }
