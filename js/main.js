@@ -5,6 +5,7 @@ $(document).ready(function() {
 	$("#intro").click(function() {
 		$(this).fadeOut(400, function() {
 			$("iframe").fadeIn(600);
+			historyAppend();
 		});
 		
 	});
@@ -69,4 +70,9 @@ function cityInput() {
 		           getCityList();
 		     }
 		});
+}
+
+function historyAppend() {
+	console.log($("iframe").attr("src"));
+	history.pushState(null, null, $("iframe").attr("src"));
 }
