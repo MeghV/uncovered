@@ -70,8 +70,6 @@
                      "http://www.simpler.co/",
                      "https://www.vayable.com/"
                     ];
-
-        var iFrameLoaded = false;
         $(document).ready(function() {
             $("iframe").hide(function() {
               $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
@@ -88,10 +86,6 @@
                 $(this).fadeIn(500);
                 historyAppend();
             });   
-        }
-
-        function OniFrameLoad() {
-          iFrameLoaded = true;
         }
 
         </script>

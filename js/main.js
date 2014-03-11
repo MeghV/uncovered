@@ -33,9 +33,15 @@ $(document).ready(function() {
 });
 
 function storeCity(data) {
-	cityID = data[0].id;
-	console.log("The current city's name is " + data[0].name);
-    console.log("The current city's id is " + data[0].id);
+	$.each(data, function(index, startup) {
+		if(startup.type === "LocationTag") {
+			cityID = data[index].id;
+			console.log("The current city's name is " + data[index].name);
+    		console.log("The current city's id is " + data[0].id);
+			break;
+		}
+	});
+
 }
 
 function getCityList() {
@@ -72,6 +78,7 @@ function cityInput() {
 		           // do stuff with data
 		           storeCity(data);
 		           getCityList();
+		           console.log(data);
 		     }
 		});
 }
