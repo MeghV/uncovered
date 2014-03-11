@@ -15,7 +15,7 @@
 }
 
 .header-container:hover .pace .pace-progress .pace-running .pace-active  {
-  top: 50px;
+  top: 20px;
 }
 
 .pace-inactive {
