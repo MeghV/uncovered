@@ -37,7 +37,7 @@
                <script>
                 paceOptions = {
                   minTime: 1300,
-                  ghostTime: 1800,
+                  ghostTime: 1500,
                   ajax: false, // disabled
                   document: false, // disabled
                   eventLag: false, // disabled
@@ -99,13 +99,14 @@
                         });
                       });
                   
-                      $(".brand").click(function(){Pace.start();randomSite();});
+                      $(".brand").click(function(){randomSite();});
                   });
                   
                   function randomSite() {
                       
                       var frame = $("iframe");
                       frame.fadeOut(600, function() {
+                        Pace.start();
                         $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                       });
                       frame.load(function() {
