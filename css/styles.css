@@ -74,13 +74,18 @@ body {
 	-ms-transition: all .3s ease;
 	-o-transition: all .3s ease;
 	transition: all .3s ease;
+	background: transparent;
+	border: none;
+	outline: none;
 }
-
-
 
 .brand:hover {
 	color: #59B2FF;
 	cursor: pointer;
+}
+
+.brand[disabled]:hover{
+	cursor: default;
 }
 
 .header-container:hover .brand {

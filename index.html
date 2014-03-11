@@ -1,93 +1,106 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="icon" href="img/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script type="text/javascript">
-
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-48368005-1']);
-          _gaq.push(['_trackPageview']);
-
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-
-        </script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <div class="header-container">
-            <div class="top-holder">
-                <h1 class="brand" onClick="_gaq.push(['_trackEvent', 'New Site', 'Uncovered click']);">Uncovered</h1>
-            </div>
-        </div>
-
-        <div id="holder">
-            <div id="intro">
-              <h1 id="callout">Uncovered is your startup discovery engine. <br />Click <span id="anywhere">anywhere</span> to start.</h1>
-            </div>
-            <iframe src="" seamless="seamless" frameborder="0"></iframe>
-        </div>
-        <div id="footer">
-            <!-- <ul class="categories">
-                <li>Test1</li>
-                <li>Test2</li>
-                <li>Test3</li>
-            </ul>
- -->
-          <input id="city" name="city" placeholder="City" autocomplete="off">
-        </div>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-        <script src="js/jquery.history.js"></script>
-        <script src="js/main.js"></script>
-        <script type="text/javascript">
-        var sites = ["https://yabbly.com/",
-                     "http://porch.com/",
-                     "http://www.ubi-interactive.com/",
-                     "http://www.insidesoci.al/",
-                     "http://www.elasticbox.com/",
-                     "http://twenty20.com/",
-                     "http://www.simpler.co/",
-                     "https://www.vayable.com/"
-                    ];
-        $(document).ready(function() {
-            $("iframe").hide(function() {
-              $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
-            });
-            
-            $(".brand").click(function(){randomSite();});
-        });
-
-        function randomSite() {
-            $("iframe").fadeOut(600, function() {
-              $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
-            });
-            $("iframe").load(function() {
-                $(this).fadeIn(500);
-                historyAppend();
-            });   
-        }
-
-        </script>
-    </body>
-</html>
+<!--[if lt IE 7]>      
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+   <![endif]-->
+   <!--[if IE 7]>         
+   <html class="no-js lt-ie9 lt-ie8">
+      <![endif]-->
+      <!--[if IE 8]>         
+      <html class="no-js lt-ie9">
+         <![endif]-->
+         <!--[if gt IE 8]><!--> 
+         <html class="no-js">
+            <!--<![endif]-->
+            <head>
+               <meta charset="utf-8">
+               <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+               <title></title>
+               <meta name="description" content="">
+               <meta name="viewport" content="width=device-width">
+               <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+               <link rel="stylesheet" href="css/normalize.min.css">
+               <link rel="stylesheet" href="css/main.css">
+               <link rel="stylesheet" href="css/styles.css">
+               <link rel="icon" href="img/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+               <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+               <script type="text/javascript">
+                  var _gaq = _gaq || [];
+                  _gaq.push(['_setAccount', 'UA-48368005-1']);
+                  _gaq.push(['_trackPageview']);
+                  
+                  (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                  })();
+                  
+               </script>
+            </head>
+            <body>
+               <!--[if lt IE 7]>
+               <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+               <![endif]-->
+               <div class="header-container">
+                  <div class="top-holder">
+                     <button disabled class="brand" onClick="_gaq.push(['_trackEvent', 'New Site', 'Uncovered click']);">Uncovered</button>
+                  </div>
+               </div>
+               <div id="holder">
+                  <div id="intro">
+                     <h1 id="callout">Uncovered is your startup discovery engine. <br />Click <span id="anywhere">anywhere</span> to start.</h1>
+                  </div>
+                  <iframe src="" seamless="seamless" frameborder="0"></iframe>
+               </div>
+               <div id="footer">
+                  <!-- <ul class="categories">
+                     <li>Test1</li>
+                     <li>Test2</li>
+                     <li>Test3</li>
+                     </ul>
+                     -->
+                  <input id="city" name="city" placeholder="City" autocomplete="off">
+               </div>
+               <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+               <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+               <script src="js/jquery.history.js"></script>
+               <script src="js/main.js"></script>
+               <script type="text/javascript">
+                  var sites = ["https://yabbly.com/",
+                               "http://porch.com/",
+                               "http://www.ubi-interactive.com/",
+                               "http://www.insidesoci.al/",
+                               "http://www.elasticbox.com/",
+                               "http://twenty20.com/",
+                               "http://www.simpler.co/",
+                               "https://www.vayable.com/"
+                              ];
+                  $(document).ready(function() {
+                      $("iframe").hide();
+                  
+                      $("#intro").click(function() {
+                        $(".brand").attr("disabled", false);
+                        $("iframe").attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
+                        $("#intro").fadeOut(400, function() {
+                          $("iframe").load(function() {
+                              $(this).fadeIn(500);
+                              historyAppend();
+                          });
+                        });
+                      });
+                  
+                      $(".brand").click(function(){randomSite();});
+                  });
+                  
+                  function randomSite() {
+                      $("iframe").fadeOut(600, function() {
+                        $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
+                      });
+                      $("iframe").load(function() {
+                          $(this).fadeIn(500);
+                          historyAppend();
+                      });   
+                  }
+                  
+               </script>
+            </body>
+         </html>
