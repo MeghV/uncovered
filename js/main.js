@@ -31,29 +31,30 @@ function storeCity(data, index) {
 
 function getCityList() {
 	sites = [];
-	$.ajax({
-		     type : "GET",
-		     dataType : "jsonp",
-		     url : "https://api.angel.co/1/tags/" + cityID + "/startups",
-		     data: { order: "popularity" },
-		     success: function(data){
-		     	   $("input[name='city']").css({
-		     	   	   color: "#428bca"
-		     	   });
-		           $.each(data['startups'], function(index, startup) {
-		           		if(startup.hidden === false) {
-		           			console.log(startup.name);
-		           			console.log(startup.company_url);
-		           			sites.push(startup.company_url);
-		           			sites = $.unique(sites);
-		           		}
-		           });
-		     }
+		$.ajax({
+			     type : "GET",
+			     dataType : "jsonp",
+			     url : "https://api.angel.co/1/tags/" + cityID + "/startups",
+			     data: { order: "popularity" },
+			     success: function(data){
+			     	   $("input[name='city']").css({
+			     	   	   color: "#428bca"
+			     	   });
+			           $.each(data['startups'], function(index, startup) {
+			           		if(startup.hidden === false) {
+			           			console.log(startup.name);
+			           			console.log(startup.company_url);
+			           			sites.push(startup.company_url);
+			           			sites = $.unique(sites);
+			           		}
+			           });
+			     }
 		});
 }
 
 function cityInput() {
 		city = $("input[name='city']").val();
+		
 		$.ajax({
 		     type : "POST",
 		     dataType : "jsonp",

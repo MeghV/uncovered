@@ -33,8 +33,22 @@
                     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
                   })();
-                  
                </script>
+               <script>
+                paceOptions = {
+                  minTime: 1300,
+                  ghostTime: 1800,
+                  ajax: false, // disabled
+                  document: false, // disabled
+                  eventLag: false, // disabled
+                  startOnPageLoad: false,
+                  restartOnPushState: false,
+                  restartOnRequestAfter: false,
+                  elements: false,
+                };
+               </script>
+               <script src="js/pace.js"></script>
+              <link href="css/pace-theme-minimal.css" rel="stylesheet" />
             </head>
             <body>
                <!--[if lt IE 7]>
@@ -85,17 +99,24 @@
                         });
                       });
                   
-                      $(".brand").click(function(){randomSite();});
+                      $(".brand").click(function(){Pace.start();randomSite();});
                   });
                   
                   function randomSite() {
-                      $("iframe").fadeOut(600, function() {
+                      
+                      var frame = $("iframe");
+                      frame.fadeOut(600, function() {
                         $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                       });
-                      $("iframe").load(function() {
-                          $(this).fadeIn(500);
+                      frame.load(function() {
+                          frame.fadeIn(500, function() {
+                              Pace.stop();
+                          });
                           historyAppend();
-                      });   
+
+                      }); 
+                      
+                      
                   }
                   
                </script>
