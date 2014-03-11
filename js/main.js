@@ -79,5 +79,5 @@ function historyAppend() {
 	var parser = document.createElement('a');
 	parser.href = $("iframe").attr("src");
 	history.pushState(null, null, parser.hostname);
-	_gaq.push(['_trackPageview', parser.hostname]);
+	_gaq.push(['_trackPageview', "/" + parser.hostname]);
 }
