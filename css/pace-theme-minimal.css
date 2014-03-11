@@ -6,7 +6,7 @@
   z-index: 99999;
   top: 0;
   left: 0;
-  height: 4px;
+  height: 2.5px;
 
   -webkit-transition: width 1s;
   -moz-transition: width 1s;
@@ -15,7 +15,7 @@
 }
 
 .header-container:hover .pace .pace-progress .pace-running .pace-active  {
-  margin-top: 50px;
+  top: 50px;
 }
 
 .pace-inactive {
