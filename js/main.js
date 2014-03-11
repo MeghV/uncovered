@@ -41,7 +41,7 @@ function getCityList() {
 			     	   	   color: "#428bca"
 			     	   });
 			           $.each(data['startups'], function(index, startup) {
-			           		if(startup.hidden === false) {
+			           		if(startup.hidden === false && startup.company_url) {
 			           			console.log(startup.name);
 			           			console.log(startup.company_url);
 			           			sites.push(startup.company_url);
