@@ -92,9 +92,12 @@
                       $("iframe").hide().attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                   
                       $("#intro").click(function() {
+                        Pace.start();
                         $(".brand").attr("disabled", false);
                         $("#intro").fadeOut(400, function() {
-                            $("iframe").fadeIn(500);
+                            $("iframe").fadeIn(500, function() {
+                              Pace.stop();
+                            });
                             historyAppend();
                         });
                       });
@@ -105,7 +108,7 @@
                   function randomSite() {
                       var frame = $("iframe");
                       frame.fadeOut(600, function() {
-                        Pace.start();
+                        Pace.restart();
                         $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                       });
                       frame.load(function() {
