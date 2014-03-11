@@ -24,7 +24,7 @@ body {
 	z-index: 9999;
 	width: 100%;
 	background: #2c3e50;
-	height: 20px;
+	height: 30px;
 	position: fixed;
 	top:0;
 	left:0;
@@ -42,7 +42,7 @@ body {
 
 #holder {
 	margin-bottom: 30px;
-	margin-top: 20px;
+	margin-top: 30px;
 	-webkit-transition: margin-top .3s ease;
 	-moz-transition: margin-top .3s ease;
 	-ms-transition: margin-top .3s ease;
