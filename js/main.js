@@ -78,6 +78,8 @@ function cityInput() {
 function historyAppend() {
 	var parser = document.createElement('a');
 	parser.href = $("iframe").attr("src");
-	history.pushState(null, null, parser.hostname);
-	_gaq.push(['_trackPageview', "/" + parser.hostname]);
+	var hostname = parser.hostname;
+	history.pushState(null, null, hostname);
+	_gaq.push(['_trackPageview', "/" + hostname]);
+	document.title = document.title + " | " + hostname;
 }
