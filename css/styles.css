@@ -50,9 +50,9 @@ body {
 	transition: margin-top .3s ease;
 }
 
-.header-container:hover + #holder  {
+/*.header-container:hover + #holder  {
 	margin-top: 50px;
-}
+}*/
 .top-holder {
 	display: table-cell;
 	width: 100%;
