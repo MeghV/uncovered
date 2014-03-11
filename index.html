@@ -97,6 +97,7 @@
                         $("#intro").fadeOut(400, function() {
                             $("iframe").fadeIn(500, function() {
                               Pace.stop();
+                              $("body").removeClass('pace-running');
                             });
                             historyAppend();
                         });
@@ -114,6 +115,7 @@
                       frame.load(function() {
                           frame.fadeIn(500, function() {
                               Pace.stop();
+                              $("body").removeClass('pace-running');
                           });
                           historyAppend();
 
