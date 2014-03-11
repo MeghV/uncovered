@@ -32,16 +32,8 @@ $(document).ready(function() {
 	});
 });
 
-function storeCity(data) {
-	$.each(data, function(index, startup) {
-		if(startup.type === "LocationTag") {
-			cityID = data[index].id;
-			console.log("The current city's name is " + data[index].name);
-    		console.log("The current city's id is " + data[0].id);
-			break;
-		}
-	});
-
+function storeCity(data, index) {
+	cityID = data[index].id;
 }
 
 function getCityList() {
@@ -76,9 +68,16 @@ function cityInput() {
 		     data: { query: city, User: "LocationTag"},
 		     success: function(data){
 		           // do stuff with data
-		           storeCity(data);
-		           getCityList();
 		           console.log(data);
+		           $.each(data, function(index, startup) {
+						if(startup.type === "LocationTag") {
+							storeCity(data, index);
+							getCityList();
+							console.log("The current city's name is " + data[index].name);
+				    		console.log("The current city's id is " + data[0].id);
+				    		return false;
+						}
+					});
 		     }
 		});
 }
