@@ -75,16 +75,13 @@
                                "https://www.vayable.com/"
                               ];
                   $(document).ready(function() {
-                      $("iframe").hide();
+                      $("iframe").hide().attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                   
                       $("#intro").click(function() {
                         $(".brand").attr("disabled", false);
-                        $("iframe").attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                         $("#intro").fadeOut(400, function() {
-                          $("iframe").load(function() {
-                              $(this).fadeIn(500);
-                              historyAppend();
-                          });
+                            $("iframe").fadeIn(500);
+                            historyAppend();
                         });
                       });
                   
