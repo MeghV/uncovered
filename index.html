@@ -37,7 +37,6 @@
                <script>
                 paceOptions = {
                   minTime: 1300,
-                  ghostTime: 1300,
                   ajax: false, // disabled
                   document: false, // disabled
                   eventLag: false, // disabled
@@ -103,7 +102,6 @@
                   });
                   
                   function randomSite() {
-                      
                       var frame = $("iframe");
                       frame.fadeOut(600, function() {
                         Pace.start();
@@ -111,7 +109,7 @@
                       });
                       frame.load(function() {
                           frame.fadeIn(500, function() {
-                              setTimeout(function(){Pace.stop();}, 300);
+                              Pace.stop();
                           });
                           historyAppend();
 
