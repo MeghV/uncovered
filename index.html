@@ -109,7 +109,7 @@
                   function randomSite() {
                       var frame = $("iframe");
                       frame.fadeOut(600, function() {
-                        Pace.restart();
+                        Pace.start();
                         $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                       });
                       frame.load(function() {
