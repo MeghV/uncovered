@@ -62,8 +62,6 @@ body {
 }
 
 .brand {
-	text-shadow: 0 2px rgba(0, 0, 0, 0.4);
-	display: inline-block;
 	color: #428bca;
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: bold;

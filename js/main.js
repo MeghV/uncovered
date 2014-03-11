@@ -1,4 +1,5 @@
 var cityID;
+var city;
 
 $(document).ready(function() {
 
@@ -23,7 +24,11 @@ $(document).ready(function() {
 	});
 
 	$("#footer").mouseleave(function() {
+		var cityValue = $("input[name='city']").val();
+		if(cityValue !== "" && cityValue !== city) {
 			cityInput();
+		} 		
+		$("input[name='city']").blur();
 	});
 });
 
@@ -57,8 +62,7 @@ function getCityList() {
 }
 
 function cityInput() {
-	$("input[name='city']").blur();
-		var city = $("input[name='city']").val();
+		city = $("input[name='city']").val();
 		$.ajax({
 		     type : "POST",
 		     dataType : "jsonp",
@@ -76,4 +80,5 @@ function historyAppend() {
 	var parser = document.createElement('a');
 	parser.href = $("iframe").attr("src");
 	history.pushState(null, null, parser.hostname);
+	_gaq.push(['_trackPageview', '/' + parser.hostname]);
 }
