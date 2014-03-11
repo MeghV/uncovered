@@ -81,5 +81,5 @@ function historyAppend() {
 	var hostname = parser.hostname;
 	history.pushState(null, null, hostname);
 	_gaq.push(['_trackPageview', "/" + hostname]);
-	document.title = document.title + " | " + hostname;
+	document.title = "Uncovered Discovery Engine | " + hostname;
 }
