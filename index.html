@@ -106,12 +106,12 @@
                       
                       var frame = $("iframe");
                       frame.fadeOut(600, function() {
-                        Pace.start;
+                        Pace.start();
                         $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                       });
                       frame.load(function() {
                           frame.fadeIn(500, function() {
-                              Pace.stop;
+                              setTimeout(function(){Pace.stop();}, 300);
                           });
                           historyAppend();
 
