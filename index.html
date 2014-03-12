@@ -114,7 +114,7 @@
                         Pace.restart();
                         $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                       });
-                      frame.load(function() {
+                      frame.one("load", function() {
                           frame.fadeIn(500, function() {
                               Pace.stop();
                               $("body").removeClass('pace-running');

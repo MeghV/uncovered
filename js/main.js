@@ -10,7 +10,7 @@ $(document).ready(function() {
 			Pace.restart();
 			$(this).attr("src", link);
 		});
-		frame.load(function() {
+		frame.one("load",function() {
 			frame.fadeIn(500, function() {
 				Pace.stop();
 				$("body").removeClass('pace-running');
