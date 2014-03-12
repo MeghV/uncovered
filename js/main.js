@@ -2,9 +2,10 @@ var cityID;
 var city;
 
 $(document).ready(function() {
-	window.addEventListener("popstate", function(e) {
+	window.onpopstate = function(e) {
 		var frame = $("iframe");
-		var link = location.pathname.split('/')[2];
+		var link = e.state.link;
+		console.log(e);
 		frame.fadeOut(600, function() {
 			Pace.restart();
 			$(this).attr("src", "http://" + link);
@@ -17,7 +18,7 @@ $(document).ready(function() {
 			_gaq.push(['_trackPageview', "/" + link]);
 			document.title = "Uncovered Discovery Engine | " + link;
 		});
-	});
+	};
 
 	$("input[name='city']").mouseenter(function() {
 		$(this).focus();
@@ -101,7 +102,7 @@ function historyAppend() {
 	var parser = document.createElement('a');
 	parser.href = $("iframe").attr("src");
 	var hostname = parser.hostname;
-	history.pushState(null, null, hostname);
+	history.pushState({ link: parser.href }, null, hostname);
 	_gaq.push(['_trackPageview', "/" + hostname]);
 	document.title = "Uncovered Discovery Engine | " + hostname;
 }
