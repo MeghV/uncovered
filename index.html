@@ -67,13 +67,7 @@
                      <h1 id="callout">Uncovered is your startup discovery engine. <br />Click <span id="anywhere">anywhere</span> to start.</h1>
                   </div>
                   <iframe src="" seamless="seamless" frameborder="0">
-                    <?php 
-
-                        $uber = file_get_contents('https://www.uber.com/');
-
-                        echo $uber;
-
-                        ?>
+                    <?php htmlentities(file_get_contents('https://www.uber.com/')); ?>
 
                   </iframe>
                </div>
@@ -101,7 +95,7 @@
                                "https://www.vayable.com/"
                               ];
                   $(document).ready(function() {
-                      $("iframe").hide().attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
+                      // $("iframe").hide().attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                   
                       $("#intro").click(function() {
                         Pace.start();
