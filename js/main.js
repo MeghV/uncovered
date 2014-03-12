@@ -7,7 +7,7 @@ $(document).ready(function() {
 		var link = location.pathname.split('/')[2];
 		frame.fadeOut(600, function() {
 			Pace.restart();
-			$(this).attr("src", "http://" + link]);
+			$(this).attr("src", "http://" + link);
 		});
 		frame.load(function() {
 			frame.fadeIn(500, function() {
