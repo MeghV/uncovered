@@ -66,10 +66,7 @@
                   <div id="intro">
                      <h1 id="callout">Uncovered is your startup discovery engine. <br />Click <span id="anywhere">anywhere</span> to start.</h1>
                   </div>
-                  <iframe src="" seamless="seamless" frameborder="0">
-                    <?php echo htmlentities(file_get_contents('https://www.uber.com/')); ?>
-
-                  </iframe>
+                  <iframe src="" seamless="seamless" frameborder="0"></iframe>
                </div>
                <div id="footer">
                   <!-- <ul class="categories">
@@ -95,7 +92,7 @@
                                "https://www.vayable.com/"
                               ];
                   $(document).ready(function() {
-                      // $("iframe").hide().attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
+                      $("iframe").hide().attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                   
                       $("#intro").click(function() {
                         Pace.start();
@@ -117,7 +114,7 @@
                         Pace.restart();
                         $(this).attr("src", sites[Math.floor(Math.random() * (sites.length - 1))]);
                       });
-                      frame.one("load", function() {
+                      frame.one("load",function() {
                           frame.fadeIn(500, function() {
                               Pace.stop();
                               $("body").removeClass('pace-running');
