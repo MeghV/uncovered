@@ -8,7 +8,7 @@ $(document).ready(function() {
 		console.log(e);
 		frame.fadeOut(600, function() {
 			Pace.restart();
-			$(this).attr("src", "http://" + link);
+			$(this).attr("src", link);
 		});
 		frame.load(function() {
 			frame.fadeIn(500, function() {
