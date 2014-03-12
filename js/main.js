@@ -103,6 +103,7 @@ function historyAppend() {
 	parser.href = $("iframe").attr("src");
 	var hostname = parser.hostname;
 	history.pushState({ link: parser.href }, null, hostname);
+	console.log("added " + parser.href + " to history")
 	_gaq.push(['_trackPageview', "/" + hostname]);
 	document.title = "Uncovered Discovery Engine | " + hostname;
 }
