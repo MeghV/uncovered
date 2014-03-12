@@ -14,8 +14,8 @@ $(document).ready(function() {
 				Pace.stop();
 				$("body").removeClass('pace-running');
 			});
-			_gaq.push(['_trackPageview', "/" + hostname]);
-	document.title = "Uncovered Discovery Engine | " + hostname;
+			_gaq.push(['_trackPageview', "/" + link]);
+			document.title = "Uncovered Discovery Engine | " + link;
 		});
 	});
 
